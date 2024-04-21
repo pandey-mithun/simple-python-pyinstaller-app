@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'python -m py_compile sources/add2vals.py source/calc.py'
-                stash(name: 'compiled-results', includes: sources/*.py*')
+                stash(name: 'compiled-results', includes: 'sources/*.py*')
             }
         }
     }
